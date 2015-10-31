@@ -7,7 +7,7 @@
 	$ soapcpp2 -c auto.h
 	$ gcc -o autoserver autoserver.c stdsoap2.c soapC.c soapServer.c -l bcm2835
 */
-
+//Esto lo agrego para probar----ELIMINAR COMENTARIO
 #include <bcm2835.h>
 #include <stdio.h>
 
