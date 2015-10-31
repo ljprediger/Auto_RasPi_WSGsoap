@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="setAuto"
+ targetNamespace="urn:setAuto"
+ xmlns:tns="urn:setAuto"
+ xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+ xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:ns="urn:setAuto"
+ xmlns:SOAP="http://schemas.xmlsoap.org/wsdl/soap/"
+ xmlns:MIME="http://schemas.xmlsoap.org/wsdl/mime/"
+ xmlns:DIME="http://schemas.xmlsoap.org/ws/2002/04/dime/wsdl/"
+ xmlns:WSDL="http://schemas.xmlsoap.org/wsdl/"
+ xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+<types>
+
+ <schema targetNamespace="urn:setAuto"
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:ns="urn:setAuto"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="unqualified"
+  attributeFormDefault="unqualified">
+  <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+ </schema>
+
+</types>
+
+<message name="setAutoRequest">
+ <part name="a" type="xsd:double"/><!-- ns__setAuto::a -->
+ <part name="b" type="xsd:double"/><!-- ns__setAuto::b -->
+</message>
+
+<message name="setAutoResponse">
+ <part name="result" type="xsd:double"/><!-- ns__setAuto::result -->
+</message>
+
+<portType name="setAutoPortType">
+ <operation name="setAuto">
+  <documentation>Service definition of function ns__setAuto</documentation>
+  <input message="tns:setAutoRequest"/>
+  <output message="tns:setAutoResponse"/>
+ </operation>
+</portType>
+
+<binding name="setAuto" type="tns:setAutoPortType">
+ <SOAP:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+ <operation name="setAuto">
+  <SOAP:operation style="rpc" soapAction=""/>
+  <input>
+     <SOAP:body use="encoded" namespace="urn:setAuto" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </input>
+  <output>
+     <SOAP:body use="encoded" namespace="urn:setAuto" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+  </output>
+ </operation>
+</binding>
+
+<service name="setAuto">
+ <documentation>gSOAP 2.8.7 generated service definition</documentation>
+ <port name="setAuto" binding="tns:setAuto">
+  <SOAP:address location="http://192.168.1.120:8080"/>
+ </port>
+</service>
+
+</definitions>
